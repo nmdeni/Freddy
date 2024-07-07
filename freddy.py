@@ -4,7 +4,7 @@ class Freddy:
 
     def __init__(self,status):
         self.name = 'Freddy'
-        self.age = int(datetime.date.today().year) - 2024
+        self.age = f"{int(datetime.date.today().year) - 2024} лет"
         self.status = status
         self.menu = [
             'q - выключить Freddy',
@@ -15,11 +15,11 @@ class Freddy:
         self.startFreddy()
     def startFreddy(self):
         while(self.status):
-            print(f"Привет, я {self.name}! Вот что я умею")
+            print(f"Привет, я {self.name}! Вот что я умею\n")
 
             for i in self.menu:
                 print(i)
-            user_com = input("Введите команду > ")
+            user_com = input("\nВведите команду > ")
 
             if user_com == 'q':
                 self.status = False
