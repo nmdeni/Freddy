@@ -1,4 +1,5 @@
 import datetime
+import psycopg2
 class Freddy:
     """Основной класс помощника Freddy"""
 
