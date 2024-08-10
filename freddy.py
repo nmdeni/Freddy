@@ -15,7 +15,8 @@ class Freddy:
             'age - узнать возраст'
         ]
 
-        self.startFreddy()
+        if self.status:
+            self.startFreddy()
     def startFreddy(self):
         self.connect_db()
         print(f"Привет, я {self.name}! Вот что я умею\n")
@@ -30,9 +31,9 @@ class Freddy:
                 print('Отключение...')
                 self.status = False
             elif user_com == 'name':
-                print(self.name + '\n')
+                print("Меня зовут " + self.name + '\n')
             elif user_com == 'age':
-                print(self.age + '\n')
+                print("Мне " + self.age + '\n')
             else:
                 print("Я еще этого не умею")
 
