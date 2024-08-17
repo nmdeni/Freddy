@@ -11,6 +11,7 @@ class Freddy:
         # self.friends_list =
         self.menu = [
             'q - выключить Freddy',
+            'db - подключиться к БД',
             'name - узнать имя',
             'age - узнать возраст'
         ]
@@ -30,6 +31,8 @@ class Freddy:
             if user_com == 'q':
                 print('Отключение...')
                 self.status = False
+            elif user_com == 'db':
+                self.connect_db()
             elif user_com == 'name':
                 print("Меня зовут " + self.name + '\n')
             elif user_com == 'age':
