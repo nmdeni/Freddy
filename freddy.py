@@ -1,5 +1,7 @@
 import datetime
 import psycopg2
+
+from friends_mod import Friends_mod
 class Freddy:
     """Основной класс помощника Freddy"""
 
@@ -8,7 +10,7 @@ class Freddy:
         self.name = 'Freddy'
         self.age = f"{int(datetime.date.today().year) - 2024} лет"
         self.name_dev = "Мой создатель NMD"
-        # self.friends_list =
+        self.friends = Friends_mod(self)
         self.menu = [
             'q - выключить Freddy',
             'db - подключиться к БД',
@@ -37,6 +39,8 @@ class Freddy:
                 print("Меня зовут " + self.name + '\n')
             elif user_com == 'age':
                 print("Мне " + self.age + '\n')
+            elif user_com == 'freinds':
+                self.friends.view_list()
             else:
                 print("Я еще этого не умею")
 
